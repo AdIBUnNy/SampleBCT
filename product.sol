@@ -52,4 +52,10 @@ contract ProductInventory {
     function displayStock(string memory _name) public view returns (uint256) {
         return products[_name].quantity;
     }
+ fallback() external payable { 
+        revert("Fall back not alowed");
+    }
+    receive() external payable { 
+        revert("Receive not allowed");
+    }
 }
